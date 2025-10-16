@@ -1,0 +1,19 @@
+<table border="1" style="width:100%">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th></th>
+    </tr>
+    <th:block th:each="account: ${accounts}">
+        <tr>
+            <td th:text="${account.username}"></td>
+            <td th:text="${account.password}"></td>
+            <td th:text="${account.fullname}"></td>
+            <td th:text="${account.email}"></td>
+            <td th:text="${account.photo}"></td>
+            <td>
+                <a th:href="@{|/account/edit/${account.username}|}">Edit</a>
+            </td>
+        </tr>
+    </th:block>
+</table>
