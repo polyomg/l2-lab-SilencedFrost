@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Product pagination</title>
+</head>
+<body>
+<form action="/product/search-and-page" method="post">
+    <input name="keywords" th:value="${keywords}">
+    <button>Search</button>
+</form>
+<table border="1" style="width:100%">
+    <tr th:each="item: ${page.content}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.price}"></td>
+        <td th:text="${item.createDate}"></td>
+    </tr>
+</table>
+<a th:href="@{''(p=0)}">First</a>
+<a th:href="@{''(p=${T(java.lang.Math).max(page.number - 1, 0)})}">Previous</a>
+<a th:href="@{''(p=${T(java.lang.Math).min(page.number + 1, page.totalPages - 1)})}">Next</a>
+<a th:href="@{''(p=${page.totalPages - 1})}">Last</a>
+<ul>
+    <li>Số thực thể hiện tại: [[${page.numberOfElements}]]</li>
+    <li>Trang số: [[${page.number}]]</li>
+    <li>Kích thước trang: [[${page.size}]]</li>
+    <li>Tổng số thực thể: [[${page.totalElements}]]</li>
+    <li>Tổng số trang: [[${page.totalPages}]]</li>
+</ul>
+</body>
+</html>
