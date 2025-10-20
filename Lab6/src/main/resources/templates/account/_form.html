@@ -1,0 +1,12 @@
+<form action="/account/index" th:object="${account}">
+    <input th:field="*{username}" placeholder="Username"/>
+    <input th:field="*{password}" placeholder="Password"/>
+    <input th:field="*{fullname}" placeholder="Fullname"/>
+    <input th:field="*{email}" placeholder="Email"/>
+    <input th:field="*{photo}" placeholder="Photo"/>
+    <hr>
+    <button formaction="/account/create">Create</button>
+    <button formaction="/account/update">Update</button>
+    <a th:href="@{|/account/delete/${account.username}|}">Delete</a>
+    <a href="/account/index">Reset</a>
+</form>

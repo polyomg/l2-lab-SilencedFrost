@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Account Management</title>
+</head>
+<body>
+<h3>CATEGORY MANAGEMENT</h3>
+<th:block th:replace="~{@{/account/_form}}"/>
+<hr>
+<th:block th:replace="~{@{|account/_table|}}"/>
+</body>
+</html>
