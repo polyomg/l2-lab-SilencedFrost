@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Send Mail</title>
+</head>
+<body>
+<a href="/account/edit-profile">Account edit profile</a>
+<br>
+<a href="/account/change-password">Account change password</a>
+<br>
+<a href="/account/test">Unauthenticated account page</a>
+<br>
+<a href="/order/1234">Order number 1234</a>
+<br>
+<a href="/admin/test">Random admin page</a>
+<br>
+<a href="/admin/home/index">Unauthenticated admin page</a>
+<br>
+redirecting to: <span th:text="${redirect}"></span>
+<br>
+<i th:text="${message}">Error message</i>
+<br>
+Normal login: ALFKI/alfki
+<br>
+Admin login (adjust db): ANATR/anatr
+<form action="/auth/login" method="post">
+    <label>Username:</label>
+    <input name="username">
+    <br>
+    <label>Password:</label>
+    <input name="password" type="password">
+    <hr>
+    <button>Login</button>
+</form>
+</body>
+</html>
